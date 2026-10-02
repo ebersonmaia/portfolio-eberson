@@ -1,0 +1,124 @@
+<DOC !TYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meu | Portifolio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/eberson.png" alt="Foto de Eberson Maia" class="foto-perfil">
+        <h1>Eberson Maia</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sub-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="paragrafo">
+                Olá, sou desenvolvedor Front End, apaixonado por criar experiências web únicas e memoravéis. Combino
+                código limpo com design moderno para desevolver sites que não só funcionam perfeitamente, mas também que
+                impressionam visualmente o mundo tecnológico.
+            </P>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/projeto1.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja de Carros</h3>
+                    <p class="paragrafo-projetos">Loja Virtual moderna com animações suaves responsivo para uma loja de
+                        carros de luxo.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto2.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Pagina de Viagens</h3>
+                    <p class="paragrafo-projetos">Uma página interativa com roteiros de viagem mais cobiçados do mundo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto3.png" alt="projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Microsift</h3>
+                    <p class="paragrafo-projetos">Página da Microsoft criada para demosntar conhecimentos em diversas
+                        tecnológias.</p>
+                </div>
+            </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-forme" id="nome">
+                <div>
+
+                    <div class="grupo-form">
+                        <textarea class="campo-form" placeholder="Digite a sua Mensagem" rows="4"
+                            id="mensagem"></Textarea>
+                        <div>
+
+                            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+       function enviarWhats(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    // Validação dos campos obrigatórios
+    if (nome === "" || mensagem === "") {
+        alert("Por favor, preencha os campos de Nome e Mensagem antes de enviar.");
+        return;
+    }
+
+    const telefone = '5592985194558'; 
+    const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+    window.open(url, '_blank');
+}
+
+    </script>
+
+</body>
+
+</html>
+
