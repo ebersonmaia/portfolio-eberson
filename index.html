@@ -94,7 +94,7 @@
         </form>
     </section>
 
-  <script>
+      <script>
         function enviarWhats(event) {
             event.preventDefault();
 
@@ -106,10 +106,12 @@
                 return;
             }
 
-            // Dispara a conversão exata para o Google Ads
+            // Dispara a conversão "Clique WhatsApp" para o Google Ads
             if (typeof gtag === 'function') {
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-17902334742/RNXDCOex27YdEJbmv9hC'
+                    'send_to': 'AW-17902334742/k0eSCPn_m7gdEJbmv9hC',
+                    'value': 1.0,
+                    'currency': 'BRL'
                 });
             }
 
