@@ -94,7 +94,7 @@
         </form>
     </section>
 
-    <script>
+  <script>
         function enviarWhats(event) {
             event.preventDefault();
 
@@ -106,17 +106,21 @@
                 return;
             }
 
+            // Dispara a conversão exata para o Google Ads
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17902334742/RNXDCOex27YdEJbmv9hC'
+                });
+            }
+
             const telefone = '5592985194558';
             const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
             const msgFormatada = encodeURIComponent(texto);
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+            const url = `https://wa.me{telefone}?text=${msgFormatada}`;
 
             window.open(url, '_blank');
         }
     </script>
 
 </body>
-
-</html>
-
 
